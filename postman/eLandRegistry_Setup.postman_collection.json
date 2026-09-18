@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "elandregistry-setup-collection-id",
+		"name": "eLandRegistry API - Setup Phase",
+		"description": "Initial setup collection for validating eLandRegistry REST API health and infrastructure.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/healthcheck/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"healthcheck",
+						""
+					]
+				},
+				"description": "Checks backend REST API status, PostgreSQL database connectivity, and Hyperledger Fabric status."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000/api/v1",
+			"type": "string"
+		}
+	]
+}

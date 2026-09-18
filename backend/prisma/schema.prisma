@@ -1,0 +1,162 @@
+// Prisma Schema for eLandRegistry Database Setup
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CITIZEN
+  LRO
+  ADMIN
+}
+
+enum PropertyStatus {
+  UNVERIFIED
+  VERIFIED
+  PENDING_MUTATION
+  MUTATED
+  LOCKED
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+// 1. User Model
+model User {
+  id               String           @id @default(uuid())
+  email            String           @unique
+  phone            String?          @unique
+  fullName         String
+  role             Role             @default(CITIZEN)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  
+  properties       Property[]       @relation("OwnerProperties")
+  buyRequests      BuySellRequest[] @relation("BuyerRequests")
+  sellRequests     BuySellRequest[] @relation("SellerRequests")
+  refreshTokens    RefreshToken[]
+  auditLogs        AuditLog[]
+
+  @@map("users")
+}
+
+// 2. Property Model
+model Property {
+  id               String           @id @default(uuid())
+  khasraNumber     String
+  khataNumber      String
+  district         String
+  subDivision      String
+  circle           String
+  mouza            String
+  areaInAcres      Float
+  ownerId          String
+  status           PropertyStatus   @default(UNVERIFIED)
+  blockchainTxHash String?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  owner            User             @relation("OwnerProperties", fields: [ownerId], references: [id])
+  buySellRequests  BuySellRequest[]
+  documents        Document[]
+  mutationRecords  MutationRecord[]
+
+  @@map("properties")
+}
+
+// 3. BuySellRequest Model
+model BuySellRequest {
+  id               String        @id @default(uuid())
+  propertyId       String
+  buyerId          String
+  sellerId         String
+  offeredPrice     Float
+  status           RequestStatus @default(PENDING)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  property         Property      @relation(fields: [propertyId], references: [id])
+  buyer            User          @relation("BuyerRequests", fields: [buyerId], references: [id])
+  seller           User          @relation("SellerRequests", fields: [sellerId], references: [id])
+
+  @@map("buy_sell_requests")
+}
+
+// 4. Document Model
+model Document {
+  id               String   @id @default(uuid())
+  propertyId       String
+  documentType     String
+  fileUrl          String
+  fileHash         String
+  createdAt        DateTime @default(now())
+
+  property         Property @relation(fields: [propertyId], references: [id])
+
+  @@map("documents")
+}
+
+// 5. SmartContractTransaction Model
+model SmartContractTransaction {
+  id               String   @id @default(uuid())
+  txHash           String   @unique
+  channelName      String
+  chaincodeName    String
+  functionName     String
+  payloadHash      String
+  status           String
+  createdAt        DateTime @default(now())
+
+  @@map("smart_contract_transactions")
+}
+
+// 6. MutationRecord Model
+model MutationRecord {
+  id               String   @id @default(uuid())
+  propertyId       String
+  previousOwnerId  String
+  newOwnerId       String
+  mutationNumber   String   @unique
+  blockchainTxId   String?
+  createdAt        DateTime @default(now())
+
+  property         Property @relation(fields: [propertyId], references: [id])
+
+  @@map("mutation_records")
+}
+
+// 7. AuditLog Model
+model AuditLog {
+  id               String   @id @default(uuid())
+  userId           String?
+  action           String
+  ipAddress        String?
+  details          String?
+  createdAt        DateTime @default(now())
+
+  user             User?    @relation(fields: [userId], references: [id])
+
+  @@map("audit_logs")
+}
+
+// 8. RefreshToken Model
+model RefreshToken {
+  id               String   @id @default(uuid())
+  userId           String
+  token            String   @unique
+  expiresAt        DateTime
+  createdAt        DateTime @default(now())
+
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("refresh_tokens")
+}
