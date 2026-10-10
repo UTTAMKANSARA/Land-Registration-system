@@ -1,13 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
-import { sendError } from '../utils/apiResponse';
-import { config } from '../config';
+const { sendError } = require('../utils/apiResponse');
+const { config } = require('../config');
 
-export function errorHandler(
-  err: Error & { statusCode?: number; status?: number; code?: string },
-  _req: Request,
-  res: Response,
-  _next: NextFunction,
-): void {
+function errorHandler(err, _req, res, _next) {
   const statusCode = err.statusCode || err.status || 500;
   const message = err.message || 'An unexpected error occurred';
   const code = err.code || 'INTERNAL_SERVER_ERROR';
@@ -16,3 +10,5 @@ export function errorHandler(
 
   sendError(res, message, code, statusCode, details);
 }
+
+module.exports = { errorHandler };

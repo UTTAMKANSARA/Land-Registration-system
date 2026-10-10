@@ -1,0 +1,2 @@
+// Models placeholder
+module.exports = {};

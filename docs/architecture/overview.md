@@ -21,7 +21,7 @@
                                |
                                v (HTTP / REST)
 +-------------------------------------------------------------+
-|                   Node.js / Express REST API                |
+|               Node.js / Express REST API (JS)               |
 |           (Helmet, CORS, Morgan, Error Handler)             |
 +-------------------------------------------------------------+
              |                                   |
@@ -44,4 +44,6 @@
 
 - **Environment Isolation**: All configuration values and secrets are sourced strictly from `.env` files.
 - **Headers & CORS**: Secured via Helmet headers and restrictive origin policies.
-- **Auditing**: Every mutation and state transition writes an immutable audit event to both PostgreSQL and the Fabric ledger.
+- **Frontend**: React + Vite + TypeScript + React Router + Axios
+- **Backend**: Node.js + Express.js (JavaScript REST API)
+- **Database**: PostgreSQL (managed via Prisma ORM)

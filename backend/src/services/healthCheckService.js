@@ -1,8 +1,7 @@
-import { checkDatabaseConnection } from '../database/prisma';
-import { HealthCheckData } from '../types';
+const { checkDatabaseConnection } = require('../database/prisma');
 
-export class HealthCheckService {
-  public static async getHealthStatus(): Promise<HealthCheckData> {
+class HealthCheckService {
+  static async getHealthStatus() {
     const isDbConnected = await checkDatabaseConnection();
 
     return {
@@ -13,3 +12,5 @@ export class HealthCheckService {
     };
   }
 }
+
+module.exports = { HealthCheckService };

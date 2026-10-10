@@ -1,0 +1,2 @@
+// Repositories placeholder
+module.exports = {};

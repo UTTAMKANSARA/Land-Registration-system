@@ -1,5 +1,5 @@
-import request from 'supertest';
-import app from '../src/app';
+const request = require('supertest');
+const app = require('../src/app');
 
 describe('GET /api/v1/healthcheck/', () => {
   it('should return HTTP 200 and system health status', async () => {
