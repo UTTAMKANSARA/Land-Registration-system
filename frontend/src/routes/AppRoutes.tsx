@@ -1,3 +1,4 @@
+import { ProfileSettings } from '../pages/ProfileSettings';
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
@@ -15,6 +16,7 @@ export const AppRoutes: React.FC = () => {
 
       {/* Main pages — with navbar */}
       <Route path="/" element={<MainLayout />}>
+        <Route path="settings" element={<ProfileSettings />} />
         <Route index element={<Home />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="*" element={<Navigate to="/" replace />} />
