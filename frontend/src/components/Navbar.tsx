@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -13,8 +13,8 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar" aria-label="Main navigation">
-      <div className="brand">
-        <div className="brand-icon" aria-hidden="true">🏛️</div>
+      <div className="brand" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+        <div className="brand-icon" aria-hidden="true">&#x1F3DB;&#xFE0F;</div>
         eLandRegistry
         <span className="brand-badge">Bihar</span>
       </div>
@@ -27,11 +27,18 @@ export const Navbar: React.FC = () => {
         </li>
 
         {isAuthenticated && (
-          <li>
-            <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Dashboard
-            </NavLink>
-          </li>
+          <>
+            <li>
+              <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/register-land" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Register Land
+              </NavLink>
+            </li>
+          </>
         )}
 
         {isAuthenticated && user ? (
@@ -45,7 +52,7 @@ export const Navbar: React.FC = () => {
                   display: 'inline-block',
                 }}
               >
-                👤 {user.fullName.split(' ')[0]}
+                &#x1F464; {user.fullName.split(' ')[0]}
               </span>
             </li>
             <li>
