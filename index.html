@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer Property | eLand Registration Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Portal navigation">
+        <div>
+          <a class="brand" href="#top" aria-label="eLand Registration Portal home">
+            <img src="./assets/eland-emblem.jpeg" alt="Government of India Land Records emblem" />
+            <span><strong>eLand Registration Portal</strong><small>GOVT OF INDIA LAND<br />RECORDS</small></span>
+          </a>
+          <nav>
+            <p class="nav-label">Services navigation</p>
+            <a href="#top"><i>⊞</i>Dashboard</a>
+            <a href="#property-list"><i>⌂</i>My Properties</a>
+            <a href="#property-list"><i>⌕</i>Search Land Records</a>
+            <a href="#details"><i>✣</i>Register Property</a>
+            <a class="selected" href="#top"><i>⇄</i>Transfer Property</a>
+            <a href="#property-list"><i>▧</i>Ownership History</a>
+          </nav>
+        </div>
+        <div class="user-area">
+          <a href="#support"><i>♧</i>Help &amp; Support</a>
+          <button class="profile-trigger" type="button" aria-label="Open profile menu">
+            <img src="./assets/profile.jpeg" alt="" />
+            <span><strong>Ramesh Kumar</strong><small>Citizen</small></span><b>⌄</b>
+          </button>
+        </div>
+      </aside>
+
+      <main id="top" class="main-content">
+        <section class="workflow-card">
+          <div class="workflow-heading">
+            <div>
+              <p class="eyebrow">Property services</p>
+              <h1>Transfer Property</h1>
+              <p>Initiate a secure ownership transfer request and submit the required information for government verification.</p>
+            </div>
+            <span class="header-mark"></span>
+          </div>
+          <div class="stepper">
+            <div class="step-line"></div>
+            <div class="step active"><b>01</b><strong>Select Property</strong><small>Active</small></div>
+            <div class="step"><b>02</b><strong>New Owner</strong><small>Pending</small></div>
+            <div class="step"><b>03</b><strong>Buyer Approval</strong><small>Pending</small></div>
+            <div class="step"><b>04</b><strong>LRO Appointment</strong><small>Pending</small></div>
+            <div class="step-help"><span>⊕</span><strong>Step 1 of 4</strong><i>·</i> Choose the property registered under your account that you want to transfer.</div>
+          </div>
+        </section>
+
+        <div class="content-grid">
+          <div class="left-column">
+            <section class="card property-card" id="property-list">
+              <div class="card-title"><div><h2><span>▦</span> Select Property</h2><p>Search and select an existing property from your registered properties ledger.</p></div></div>
+              <div class="search-row"><label class="search-input"><span>⌕</span><input id="propertySearch" value="ELR-MH-SOL-004821" aria-label="Search property" /></label><button class="filter-btn" id="filterButton">☷ Filter</button><button class="search-btn" id="searchButton">Search</button></div>
+              <div class="selected-property">
+                <div class="selected-title"><span>✓</span><strong>Selected Property for Transfer</strong><b>Verified owner</b></div>
+                <div class="facts">
+                  <div><small>Property ID</small><strong class="mono teal">ELR-MH-SOL-004821</strong></div><div><small>Current owner</small><strong>Ramesh Kumar<br />Sharma</strong></div><div><small>Property type</small><strong>Residential Plot</strong></div><div><small>Khata number</small><strong class="mono">KH-2048</strong></div>
+                  <div><small>Khsera / survey no.</small><strong class="mono">SR-118/4B</strong></div><div><small>Village</small><strong>Ashok Nagar</strong></div><div><small>Taluka</small><strong>Gaya</strong></div><div><small>District &amp; state</small><strong>Patna<br />Bihar</strong></div>
+                  <div><small>Registered area</small><strong>1,250 sq. ft. <em>(116.12 sq. m)</em></strong></div>
+                </div>
+                <div class="property-footer"><a href="#details">◉ View Property Details (RoR Extract)</a><button type="button">Change Property Selection</button></div>
+              </div>
+              <div class="other-property"><div><small>Other available registered properties (1)</small><a href="#property-list">View All in Ledger</a></div><article><span class="radio"></span><p><strong class="mono">ELR-MH-PUN-009134</strong><b>Agricultural Land</b><br /><small>Haveli, Bihar · Khata: KH-8812 · Plot 41-A · 2.4 Acres</small></p><button type="button">Select</button></article></div>
+            </section>
+
+            <section class="card details-card" id="details">
+              <div class="card-title"><div><h2><span>▣</span> Transfer Details</h2><p>Specify the legal nature and consideration for this proposed ownership mutation.</p></div></div>
+              <form id="transferForm">
+                <div class="fields">
+                  <label>Transfer Type <sup>*</sup><select><option>Sale</option><option>Gift</option><option>Inheritance</option></select><small>Legally binding conveyance category</small></label>
+                  <label>Transfer Consideration Amount <sup>*</sup><div class="input-box mono">₹ 8,50,000</div><small>Enter 0 if the transfer is not based on monetary consideration.</small></label>
+                  <label>Proposed Transfer Date <sup>*</sup><div class="input-box">15/09/2026 <span>▣</span></div><small>Date of execution of sale/gift deed</small></label>
+                  <label>Sub-Registrar Office (SRO) Jurisdiction<div class="input-box">Ashok nagar SRO - Code MH-413</div><small>Auto-determined by parcel revenue limits</small></label>
+                </div>
+                <label class="remarks">Reason / Remarks <small>Optional</small><textarea>Transfer of residential plot via registered conveyance deed between seller and buyer.</textarea><span>Will be permanently appended to the mutation verification ledger</span></label>
+              </form>
+            </section>
+            <section class="card action-bar"><button class="draft" id="draftButton">▣&nbsp; Save as Draft</button><div><button class="continue" id="continueButton">Continue to New Owner&nbsp; →</button><small>Next step: Enter personal details and identity verification for the new owner.</small></div></section>
+          </div>
+
+          <aside class="summary-rail" id="support">
+            <section class="card map-card"><div class="rail-title"><h2>▥ Cadastral Map Boundary</h2><b>GIS Live</b></div><div class="map"><span>Patna sub-district</span><strong>Plot SR-118/4B Geo-Fenced</strong><div class="parcel parcel-one"></div><div class="parcel parcel-two"></div></div><div class="boundaries"><p><small>North boundary</small>9.0m Public Road</p><p><small>East boundary</small>Plot SR-118/4C</p></div></section>
+            <section class="card fees"><div class="rail-title"><h2>Fee Assessment Preview</h2><span>▧</span></div><p>Calculated per Maharashtra Stamp Act based on ₹8,50,000 valuation.</p><div class="fee-list"><p><span>Stamp Duty (5%)</span><b>₹42,500</b></p><p><span>Registration Fee (1%)</span><b>₹8,500</b></p><p><span>Local Body Tax (LBT 1%)</span><b>₹8,500</b></p><hr /><p class="total"><strong>Total Payable</strong><b>₹59,500</b></p></div><small class="gateway">⚑ Payable in Step 4 via Bharatkosh e-Challan Gateway</small></section>
+            <section class="notice"><span>♧</span><div><h2>Legal Mutation Guarantee</h2><p>Once submitted, a statutory 15-day objection notice will be dispatched via SMS to all recorded co-sharers under Section 149 of the Land Revenue Code.</p></div></section>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

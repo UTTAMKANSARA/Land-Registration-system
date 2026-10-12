@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Owner | Transfer Property</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="step-two-page">
+    <main class="step-two-main">
+      <header class="step-two-header">
+        <div class="crumb"><b>Property services</b><span>/</span><code>TRS-2024-MH-9921</code></div>
+        <h1>Transfer Property</h1>
+        <p>Initiate a secure ownership transfer request and submit the required information for government<br class="desktop-break" /> verification.</p>
+        <section class="step-two-progress">
+          <div class="progress-items">
+            <div class="horizontal-step complete"><b>✓</b><span><strong>01 Select Property</strong><small>Verified Record</small></span></div>
+            <div class="horizontal-step current"><b>02</b><span><strong>02 New Owner</strong><small>In Progress</small></span></div>
+            <div class="horizontal-step dim"><b>03</b><span><strong>03 Buyer Approval</strong><small>RoR &amp; Deeds</small></span></div>
+            <div class="horizontal-step dim"><b>04</b><span><strong>04 LRO Appointment</strong><small>e-Sign Challan</small></span></div>
+          </div>
+          <div class="step-two-instruction"><span>⊕</span><strong>Step 2 of 4</strong><i>—</i><p>Enter the details of the person who will receive ownership of the selected property.</p><code>SEC-TENURE-MOD-V2</code></div>
+        </section>
+      </header>
+
+      <section class="selected-summary">
+        <div class="summary-chips">
+          <span>▥ Property: <code>ELR-MH-SOL-004821</code></span>
+          <span>⌂ Khata: <code>KH-2048</code></span>
+          <span>♟ Current Owner: <strong>Ramesh Kumar Sharma</strong></span>
+          <span>◱ Area: <strong>1,250 sq. ft.</strong></span>
+          <span>⌖ Ashok nagar Road, Bihar, BR</span>
+        </div>
+        <button type="button">↗ Change Property</button>
+      </section>
+
+      <section class="owner-alert"><span>✓</span><div><h2>New Owner Verification Requirement</h2><p>The new owner's identity will be verified using government approved identity verification before the transfer can be approved.</p><small>Important: Ensure legal name matches exactly with official Aadhaar / National ID records to prevent mutation rejection.</small></div></section>
+
+      <div class="step-two-grid">
+        <div class="step-two-form-column">
+          <section class="step-two-card">
+            <h2>Personal Information</h2><p class="section-intro">Legal and contact identity details for the proposed new title holder.</p>
+            <div class="new-owner-fields">
+              <label class="wide">Full Legal Name <sup>*</sup><span class="match">Must match ◉</span><input value="Sunita Rajesh Patil" aria-label="Full Legal Name" /><small>As per Aadhaar / National ID</small></label>
+              <label>Aadhaar / National ID Number <sup>*</sup><div class="verified-input"><input value="8888 0001 8812" aria-label="Aadhaar number" /><b>◉ UIDAI eKYC</b></div></label>
+              <label>Date of Birth <sup>*</sup><div class="with-suffix"><input value="14/06/1988" aria-label="Date of birth" /><b>▣ 28 YRS</b></div></label>
+              <label>Mobile Number (UIDAI Linked) <sup>*</sup><div class="phone"><b>+91</b><input value="98234 56789" aria-label="Mobile number" /></div></label>
+              <label>Email Address <sup>*</sup><div class="email"><b>@</b><input value="sunita.patil@example.com" aria-label="Email address" /></div></label>
+              <label class="wide">Relationship to Current Owner <sup>*</sup><select aria-label="Relationship to current owner"><option>None (Arm's Length Buyer)</option><option>Family Member</option><option>Legal Heir</option></select><small>Arm's length transactions are subject to standard stamp duty valuation schedules.</small></label>
+            </div>
+          </section>
+
+          <section class="step-two-card address-card">
+            <h2>Residential Address <span>⌘</span></h2><p class="section-intro">Permanent residential address of the new owner for official revenue notices.</p>
+            <div class="address-fields">
+              <label class="wide">Full Postal Address (Line 1 &amp; Line 2) <sup>*</sup><input value="Flat 402, Shanti Heights, Near Shivaji Chowk, Ashok Nagar Road" aria-label="Full postal address" /></label>
+              <label>Village / City <sup>*</sup><input value="Patna" aria-label="Village or city" /></label>
+              <label>Taluka / Tehsil <sup>*</sup><input value="North Patna" aria-label="Taluka or tehsil" /></label>
+              <label>District <sup>*</sup><input value="Patna" aria-label="District" /></label>
+              <label>State / UT <sup>*</sup><select aria-label="State"><option>Bihar</option></select></label>
+              <label>PIN Code <sup>*</sup><input value="413005" aria-label="PIN Code" /></label>
+            </div>
+          </section>
+
+          <section class="verification-panel">
+            <h2>Identity Verification Method</h2><p>Select the identity verification method to be authenticated during the revenue mutation audit.</p>
+            <div class="verification-options">
+              <button class="verification-choice checked" type="button"><span class="radio-dot"></span><div><strong>Aadhaar / e-KYC <b>Recommended</b></strong><p>Instant OTP-based citizen authentication via linked mobile number at UIDAI.</p><small>✓ Instant verification (1 min)</small></div></button>
+              <button class="verification-choice" type="button"><span class="radio-dot"></span><div><strong>DigiLocker</strong><p>Fetch verified identity documents from DigiLocker repository with signed consent.</p><small>◌ Requires DigiLocker PIN</small></div></button>
+            </div>
+            <div class="identity-note">♧ Identity verification is required before the transfer request can be approved by the Land Revenue Officer (LRO).</div>
+          </section>
+        </div>
+
+        <aside class="new-owner-rail">
+          <section class="step-two-card ledger-card">
+            <div class="ledger-heading"><span>Transfer ledger summary</span><code>MH-MUT-8842</code></div>
+            <figure><img src="./assets/step2-cadastral.jpeg" alt="Cadastral Sheet 44-B satellite map" /><figcaption>◉ Cadastral Sheet #44-B</figcaption></figure>
+            <dl><div><dt>Transfer Nature</dt><dd>Absolute Sale Deed</dd></div><div><dt>Mutation Fee Status</dt><dd class="fee-ok">✓ Calculated at Step 4</dd></div><div><dt>Estimated Duty</dt><dd class="mono">₹ 1,48,500.00</dd></div><div><dt>Cess / Surcharge</dt><dd class="mono">₹ 14,850.00</dd></div></dl>
+            <p class="ledger-note">▰ Final stamp duty is reconciled automatically against ready reckoner rates for North Patna tehsil.</p>
+          </section>
+          <section class="step-two-card pathway-card"><div><img src="./assets/step2-pathway.jpeg" alt="Government seal" /><h2>Revenue Mutation Pathway</h2></div><p>Upon submission, this form will trigger a statutory 15-day objection public notice under Bihar Land Revenue Code (Sec 149).</p><small><i></i> API Server: solapur.maha-land.nic.in</small></section>
+        </aside>
+      </div>
+
+      <footer class="step-two-actions"><button id="backButton" class="back-action" type="button">←&nbsp; Back to Property Selection</button><div><button id="draftButton" class="save-action" type="button">▣&nbsp; Save as Draft</button><button id="approvalButton" class="approval-action" type="button">Continue to Buyer Approval&nbsp; →</button></div></footer>
+    </main>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

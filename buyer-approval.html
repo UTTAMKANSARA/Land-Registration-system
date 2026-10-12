@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buyer Approval | Transfer Property</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./step3.css" />
+  </head>
+  <body class="buyer-page">
+    <div class="buyer-shell">
+      <aside class="buyer-sidebar" aria-label="Portal navigation">
+        <a class="buyer-brand" href="./index.html"><img src="./assets/eland-emblem.jpeg" alt="Government of India Land Records emblem" /><span><strong>eLand Registration<br />Portal</strong><small>GOVT OF INDIA LAND<br />RECORDS</small></span></a>
+        <nav><p>Services navigation</p><a href="./index.html">⊞ <span>Dashboard</span></a><a href="./index.html">⌂ <span>My Properties</span></a><a href="./index.html">⌕ <span>Search Land Records</span></a><a href="./index.html">✣ <span>Register Property</span></a><a class="active" href="./buyer-approval.html">⇄ <span>Transfer Property</span></a><a href="./index.html">▧ <span>Ownership History</span></a></nav>
+        <div class="buyer-user"><a href="#support">♧ <span>Help &amp; Support</span></a><button type="button"><img src="./assets/profile.jpeg" alt="" /><span><strong>Ramesh Kumar</strong><small>Citizen</small></span><b>⌄</b></button></div>
+      </aside>
+      <main class="buyer-main">
+        <header class="buyer-header">
+          <div class="buyer-meta"><span>Property transfer</span><i>•</i><p>Deed Ref: TRF-2026-MH-4821</p><b><em></em> UIDAI &amp; MahaBhumi Integrated</b></div>
+          <h1>Transfer Property</h1><p>Initiate a secure ownership transfer request and submit the required information for government verification.</p>
+          <section class="buyer-progress"><div class="buyer-progress-grid"><article class="done"><b>✓</b><div><small>Step 01</small><strong>Select Property</strong></div></article><article class="done"><b>✓</b><div><small>Step 02</small><strong>New Owner</strong></div></article><article class="active"><b>03</b><div><small>Step 03 <mark>In progress</mark></small><strong>Buyer Approval</strong></div></article><article class="future"><b>04</b><div><small>Step 04 <mark>Upcoming</mark></small><strong>LRO Appointment</strong></div></article></div><div class="buyer-instruction">ⓘ <strong>Step 3 of 4</strong> — The buyer must review and approve the transfer details before an LRO appointment can be booked.</div></section>
+        </header>
+        <div class="buyer-grid">
+          <div class="buyer-left">
+            <section class="buyer-card transfer-summary"><header><h2>▣&nbsp; Transfer Summary</h2><a href="#summary">View Full RoR Extract →</a></header><p>Validated cadastral parameters &amp; conveyance deed registry snapshot</p><div class="summary-body"><div><small>Property ID</small><code>ELR-MH-SOL-<br />004821</code></div><span class="title-ok">♧ Verified<br />Title</span><div><small>Property type</small><strong>Residential Plot (NA Class II)</strong></div><div><small>Cadastral identity</small><strong class="mono">KH-2048 | SR-118/4B</strong></div><div class="wide"><small>Location</small><strong>Akkalkot Road, Solapur, Maharashtra 413005</strong></div><div><small>Registered area</small><strong>1,250 sq. ft. <em>(116.12 sq. m)</em></strong></div><div><small>Current legal owner</small><strong>Ramesh Kumar Sharma</strong></div><div><small>Conveyance type</small><strong>Sale via Conveyance Deed</strong></div><div><small>Proposed buyer</small><strong class="teal">Arjun Mehta</strong></div></div><footer>♧ Buyer Mobile: +91 98234 43210 <span>▣ Buyer Email: arjun.mehta@example.com</span><b>♙ Aadhaar linked channel</b></footer></section>
+            <section class="buyer-card verification-card"><header><h2>♢&nbsp; Buyer Verification</h2></header><div class="verification-message">♧ <span>A secure verification request will be sent to the buyer. The buyer must verify their identity and<br class="desktop-break" /> approve the proposed property transfer using biometric or UIDAI OTP e-Sign.</span></div><div class="buyer-contact"><label>Mobile (Linked to UIDAI Aadhaar)<div><span>+91</span><input value="98234 43210" aria-label="Buyer mobile" /><b>♙</b></div><small>Validated against National Identity Registry</small></label><label>Email Address for e-Sign Packet<div><span>@</span><input value="arjun.mehta@example.com" aria-label="Buyer email" /><b>✉</b></div><small>Encrypted copy of sale deed preview dispatched</small></label></div><div class="buyer-actions"><button id="sendApprovalButton" class="send" type="button">▷&nbsp; Send Approval Request</button><button id="resendButton" type="button">▣&nbsp; Resend Link</button></div><p class="buyer-helper">The buyer will receive a secure link/OTP to review and confirm this transfer request.</p></section>
+            <section class="why-card"><h2>⚒&nbsp; Why buyer approval is required</h2><p>Buyer approval prevents fraudulent, unilateral, or unauthorized ownership-transfer requests and ensures that both parties unambiguously consent before the deed application reaches the Land Revenue Sub-Registrar Office (SRO) for final endorsement.</p></section>
+          </div>
+          <aside class="buyer-rail" id="support"><section class="buyer-card dossier"><header><small>Transferee dossier</small><b>100% KYC Complete</b></header><div class="buyer-person"><img src="./assets/step3-buyer.jpeg" alt="Arjun Mehta" /><div><h2>Arjun Mehta</h2><p>♧ Aadhaar e-KYC Verified</p><small>▣ PAN: ABPCM4821K</small></div></div><div class="proofs"><span>Identity proofs <b>3/3&nbsp; Approved</b></span><i><em></em></i></div><dl><div><dt>Property Code:</dt><dd>ELR-MH-SOL-004821</dd></div><div><dt>Agreed Consideration:</dt><dd>₹8,50,000</dd></div><div><dt>Stamp Duty Estimate (5%):</dt><dd class="teal">₹42,500</dd></div><div><dt>Registration Fee (1%):</dt><dd>₹8,500</dd></div></dl></section><section class="statutory"><small>⌂ &nbsp; Statutory mandate</small><strong>Rule 42(A) Maharashtra Land Revenue Code:<br />Both transferor and transferee consent is mandatory prior to appointment scheduling.</strong><p>Enacted by Inspector General of Registration &amp;<br />Controller of Stamps</p></section></aside>
+        </div>
+        <footer class="buyer-footer"><button id="newOwnerBackButton" type="button">←&nbsp; Back to New Owner</button><div><button id="draftButton" type="button">▣&nbsp; Save as Draft</button><button id="appointmentButton" class="appointment" type="button">Continue to LRO Appointment&nbsp; →</button></div><p>♧ Buyer approval completed. Proceed to select appointment date and time slot with the Land Revenue Office.</p></footer>
+      </main>
+    </div>
+    <div class="toast" role="status" aria-live="polite"></div><script src="./script.js"></script>
+  </body>
+</html>
